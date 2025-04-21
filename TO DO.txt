@@ -1,0 +1,5 @@
+1. Pick the best hero image for the landing page
+2. Change the icons displayed on the hero section
+3. Change the icons in the features section
+4. Change the details in the features section to be consistent with the project
+5. Change the FAQ descriptions 

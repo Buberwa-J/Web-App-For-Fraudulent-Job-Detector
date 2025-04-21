@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fill in the job details | Protect Your Job Search</title>
+    
+    <link
+      rel="shortcut icon"
+      href="assets/images/hero.jpg"
+      type="image/x-icon"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+        position: relative;
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+      }
+      .form-input {
+        transition: all 0.2s ease-in-out;
+      }
+      .form-input:focus {
+        transform: translateY(-1px);
+      }
+      .full-screen-container {
+        min-height: 100vh;
+        width: 100vw;
+        display: flex;
+      }
+      /* Decorative circles for page background */
+      .background-circles::before {
+        content: "";
+        position: fixed;
+        top: -40px;
+        left: -40px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles::after {
+        content: "";
+        position: fixed;
+        top: -20px;
+        left: -20px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles-tr::before {
+        content: "";
+        position: fixed;
+        top: -40px;
+        right: -40px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles-tr::after {
+        content: "";
+        position: fixed;
+        top: -20px;
+        right: -20px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles-bl::before {
+        content: "";
+        position: fixed;
+        bottom: -40px;
+        left: -40px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles-bl::after {
+        content: "";
+        position: fixed;
+        bottom: -20px;
+        left: -20px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles-br::before {
+        content: "";
+        position: fixed;
+        bottom: -40px;
+        right: -40px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+      .background-circles-br::after {
+        content: "";
+        position: fixed;
+        bottom: -20px;
+        right: -20px;
+        width: 80px;
+        height: 80px;
+        border: 4px solid rgba(55, 88, 249, 0.1);
+        border-radius: 50%;
+        border-top-width: 8px;
+        border-top-color: rgba(55, 88, 249, 0.3);
+      }
+    </style>
+</head>
+  <body class="font-inter text-gray-800">
+    <!-- Background Decorative Circles -->
+    <div class="background-circles"></div>
+    <div class="background-circles-tr"></div>
+    <div class="background-circles-bl"></div>
+    <div class="background-circles-br"></div>
+
+    <!-- Main Content -->
+    <div class="full-screen-container">
+      <div class="flex w-full">
+        <!-- Left Side - Form -->
+        <div class="flex md:w-1/2 justify-center py-12 items-center bg-white px-16">
+          <form id="fraudForm" class="w-full max-w-4xl space-y-8">
+            <div class="text-center mb-12">
+              <p class="text-gray-600 text-lg">
+                Fill in the job details below. <br> It is recommended that you directly paste them from the job posting 🙂 </br>
+              </p>
+            </div>
+
+            <div class="space-y-8">
+              <!-- Title and Employment Type - Side by Side -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Job Title</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      name="title"
+                      class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                      placeholder=" Senior Software Engineer - Python/Django"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Employment Type</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                    </div>
+                    <input
+                      type="text"
+                      name="employment_type"
+                      class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                      placeholder=" Full-time, Part-time, Contract (6 months)"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Company Profile -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Company Profile</label
+                >
+                <textarea
+                  name="company_profile"
+                  rows="4"
+                  class="form-input w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                  placeholder=" 'Tech startup founded in 2020, specializing in AI solutions with 50+ employees globally'"
+                ></textarea>
+              </div>
+
+              <!-- Job Description and Requirements - Side by Side -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Job Description</label
+                  >
+                  <textarea
+                    name="description"
+                    rows="4"
+                    class="form-input w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                    placeholder="Detailed job responsibilities,  'Lead a team of 5 developers, architect cloud solutions, implement CI/CD pipelines...'"
+                  ></textarea>
+                </div>
+
+		<div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Requirements</label
+                  >
+                  <textarea
+                    name="requirements"
+                    rows="4"
+                    class="form-input w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                    placeholder="Required skills and qualifications,  '5+ years Python experience, AWS certification, team leadership experience...'"
+                  ></textarea>
+                </div>
+		</div>
+
+              <!-- Benefits -->
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2"
+                  >Benefits</label
+                >
+                <textarea
+                  name="benefits"
+                  rows="4"
+                  class="form-input w-full px-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                  placeholder='Health insurance 401k matching, flexible hours, remote work option, annual bonus...'"
+                ></textarea>
+	</div>
+
+              <!-- Experience and Education - Side by Side -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Required Experience</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        />
+				</svg>
+                    </div>
+                    <input
+                      name="required_experience"
+                      class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                      placeholder=" 5+ years, Mid-Senior level, Entry level (0-2 years)"
+                    />
+                  </div>
+      </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Required Education</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 14l9-5-9-5-9 5 9 5z" />
+                        <path
+                          d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"
+                        />
+					</svg>
+                    </div>
+                    <input
+                      name="required_education"
+                      class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                      placeholder=" Bachelor's in Computer Science, MBA, High School Diploma"
+                    />
+                  </div>
+                </div>
+      </div>
+
+              <!-- Industry and Function - Side by Side -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Industry</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                        />
+						</svg>
+                    </div>
+                    <input
+                      type="text"
+                      name="industry"
+                      class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                      placeholder=" Technology, Healthcare, Financial Services"
+                    />
+                  </div>
+      </div>
+
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2"
+                    >Function</label
+                  >
+                  <div class="relative">
+                    <div
+                      class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+                    >
+                      <svg
+                        class="h-5 w-5 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+							</svg>
+                    </div>
+                    <input
+                      type="text"
+                      name="function"
+                      class="form-input w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 bg-white text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:ring-opacity-50"
+                      placeholder=" Engineering, Sales, Human Resources, Marketing"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-8">
+              <button
+                type="submit"
+                class="w-full bg-blue-700 text-white font-semibold py-4 rounded-xl hover:bg-blue-800 transition-all transform hover:scale-[1.02] active:scale-[0.98] focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 text-lg"
+              >
+                Analyze Job Post
+              </button>
+      </div>
+		</form>
+	</div>
+
+        <!-- Right Side - Results Panel -->
+        <div class="relative overflow-hidden md:flex w-1/2 bg-blue-700 justify-around items-center hidden">
+          <div id="resultsContainer" class="w-full px-8">
+            <!-- Initial State -->
+            <div class="text-center" id="initialState">
+              <h1 class="text-white font-bold text-4xl mb-4">Job Fraud Analysis</h1>
+              <p class="text-white/90 mt-4 text-lg">
+				• Submit A Job Posting To Analyze It For Potential Fraud Indicators
+              </p>
+			  <p class="text-white/90 mt-4 text-lg">
+• Leave Fields Empty If They Are Not Provided              </p>
+              <div class="mt-12">
+                <svg class="w-24 h-24 mx-auto text-white/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v4m0 0v4m0-4h4m-4 0H8" />
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Decorative circles -->
+          <div class="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8 border-white"></div>
+          <div class="absolute -bottom-40 -left-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8 border-white"></div>
+          <div class="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8 border-white"></div>
+          <div class="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8 border-white"></div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById("fraudForm");
+      const resultsContainer = document.getElementById("resultsContainer");
+      const initialState = document.getElementById("initialState");
+
+      // Maximum number of retries and delay between retries
+      const MAX_RETRIES = 4;
+      const RETRY_DELAY = 2000; // 2 seconds
+      const TIMEOUT = 30000; // 30 seconds
+
+      // Loading messages for different retry attempts
+      const loadingMessages = [
+        "⏳ Processing your submission...",
+        "🔄 Still processing... Taking a bit longer than usual",
+        "🔄 Almost there... Making another attempt",
+        "🔄 Hang tight... Final attempt in progress",
+      ];
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // Show initial loading state
+        updateLoadingState(0);
+
+        // Gather form data and convert to JSON
+        const formData = new FormData(form);
+        const jsonPayload = {};
+        formData.forEach((value, key) => {
+          jsonPayload[key] = value.trim();
+        });
+
+        // Retry logic with timeout
+        let currentRetry = 0;
+        let lastError = null;
+
+        while (currentRetry <= MAX_RETRIES) {
+          try {
+            // Create timeout promise
+            const timeoutPromise = new Promise((_, reject) => {
+              setTimeout(() => reject(new Error('Request timed out')), TIMEOUT);
+            });
+
+            // Create fetch promise
+            const fetchPromise = fetch("http://127.0.0.1:5000/predict", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(jsonPayload),
+            });
+
+            // Race between fetch and timeout
+            const response = await Promise.race([fetchPromise, timeoutPromise]);
+            const data = await response.json();
+
+            if (!response.ok) {
+              throw new Error(data.error || "Analysis failed");
+            }
+
+            // If successful, display results and break the loop
+            displayResults(data);
+            break;
+
+          } catch (err) {
+            lastError = err;
+            
+            if (currentRetry < MAX_RETRIES) {
+              // Update loading state with retry message
+              updateLoadingState(currentRetry + 1);
+              // Wait before retrying
+              await new Promise(resolve => setTimeout(resolve, RETRY_DELAY));
+              currentRetry++;
+            } else {
+              // Display error if all retries failed
+              displayError(lastError);
+              break;
+            }
+          }
+        }
+      });
+
+      function updateLoadingState(retryCount) {
+        resultsContainer.innerHTML = `
+          <div class="text-center">
+            <h1 class="text-white font-bold text-4xl mb-4">Analyzing Job Post</h1>
+            <div class="animate-pulse text-white/90 mt-4 text-lg">
+              ${loadingMessages[retryCount]}
+            </div>
+            ${retryCount > 0 ? `
+            <div class="text-white/70 text-sm mt-2">
+              Retry attempt ${retryCount} of ${MAX_RETRIES}
+            </div>
+            ` : ''}
+            <div class="mt-8 space-y-4">
+              <div class="h-4 bg-white/10 rounded w-3/4 mx-auto"></div>
+              <div class="h-4 bg-white/10 rounded w-1/2 mx-auto"></div>
+            </div>
+          </div>`;
+      }
+
+      function displayResults(data) {
+        const isFraud = data.fraudulent_prediction === 1;
+        const probability = Math.round(data.fraud_probability * 100);
+
+        resultsContainer.innerHTML = `
+          <div class="text-center">
+            <h1 class="text-white font-bold text-4xl mb-6">Analysis Results</h1>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6">
+              <div class="text-2xl font-bold text-white mb-2">
+                ${isFraud ? '⚠️ Potential Fraud Detected' : '✅ Legitimate Job Post'}
+              </div>
+              <p class="text-white/90 text-lg mb-4">
+                ${isFraud 
+                  ? 'Our AI model has identified suspicious patterns in this job posting.' 
+                  : 'This job posting appears to be legitimate based on our analysis.'}
+              </p>
+              <div class="mt-4 pt-4 border-t border-white/20">
+                <div class="flex justify-between items-center">
+                  <span class="text-white/80">Fraud Probability:</span>
+                  <span class="text-xl font-mono font-bold ${probability > 50 ? 'text-red-300' : 'text-green-300'}">
+                    ${probability}%
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            ${isFraud ? `
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <h3 class="text-white font-semibold mb-3">⚡ Recommended Actions:</h3>
+                <ul class="text-left text-white/90 space-y-2">
+                  <li>• Verify the company's official website</li>
+                  <li>• Check company registration details</li>
+                  <li>• Look for online reviews and presence</li>
+                  <li>• Be cautious with personal information</li>
+                </ul>
+              </div>
+            ` : `
+              <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+                <h3 class="text-white font-semibold mb-3">✨ Good Practices:</h3>
+                <ul class="text-left text-white/90 space-y-2">
+                  <li>• Still verify company background</li>
+                  <li>• Read reviews if available</li>
+                  <li>• Keep communication professional</li>
+                </ul>
+              </div>
+            `}
+          </div>`;
+      }
+
+      function displayError(error) {
+        resultsContainer.innerHTML = `
+          <div class="text-center">
+            <h1 class="text-white font-bold text-4xl mb-6">Analysis Error</h1>
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <div class="text-2xl text-white mb-2">❌ Something went wrong</div>
+              <p class="text-white/90">${error.message}</p>
+              <p class="text-white/70 text-sm mt-4">
+                We tried ${MAX_RETRIES} times but couldn't get a response. Please try again later.
+              </p>
+</div>
+          </div>`;
+      }
+    </script>
+</body>
+</html>
